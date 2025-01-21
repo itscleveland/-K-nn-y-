@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=1280, initial-scale=1.0"> <!-- Set width to 1280px for desktop -->
   <title>Powered by GoogleAdsense</title>
   <style>
      /* General Reset */
@@ -131,6 +131,19 @@
         transform: scale(2);
       }
     }
+
+    /* Desktop Override for Mobile */
+    @media (max-width: 767px) {
+      body, html {
+        width: 1280px;  /* Force desktop width on mobile */
+        margin: 0 auto;  /* Center content */
+        overflow-x: hidden; /* Prevent horizontal scrolling */
+      }
+
+      .loading-screen {
+        background-size: cover; /* Ensure background is full screen */
+      }
+    }
   </style>
 </head>
 <body>
@@ -153,13 +166,12 @@
 
   <script>
     const messages = [
-  "Premium versions of your favorite apps.",
-  "Faster speeds, fewer bugs, smoother operation.",
-  "Exclusive features not found in the original apps.",
-  "Ad-free experience.",
-  "Stay current with the latest, most powerful app versions."
-];
-
+      "Premium versions of your favorite apps.",
+      "Faster speeds, fewer bugs, smoother operation.",
+      "Exclusive features not found in the original apps.",
+      "Ad-free experience.",
+      "Stay current with the latest, most powerful app versions."
+    ];
 
     const dynamicText = document.getElementById('dynamicText');
     const loadingScreen = document.getElementById('loadingScreen');
