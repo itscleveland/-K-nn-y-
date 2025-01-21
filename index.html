@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Powered by GoogleAdsense</title>
   <style>
-    /* General Reset */
+     /* General Reset */
     * {
       margin: 0;
       padding: 0;
@@ -17,6 +17,18 @@
       height: 100%;
       font-family: 'Arial', sans-serif;
       overflow: hidden;
+      position: relative;
+    }
+
+    /* Gradient Background */
+    body {
+      background: linear-gradient(135deg, #003366, #000);
+      animation: gradientShift 0.4s infinite alternate;
+    }
+
+    @keyframes gradientShift {
+      0% { background: linear-gradient(135deg, #003366, #000); }
+      100% { background: linear-gradient(135deg, #000, #003366); }
     }
 
     /* Loading Screen */
@@ -30,15 +42,17 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      background: linear-gradient(135deg, #2d6ef2, #6a00f4);
+      background: linear-gradient(135deg, rgba(0, 0, 0, 0.5), rgba(255, 255, 255, 0.5)), url('your-image-url.jpg');
+      background-blend-mode: overlay;
+
       z-index: 1000;
       color: white;
     }
 
     .orbital-container {
       position: relative;
-      width: 150px;
-      height: 150px;
+      width: 550px;
+      height: 550px;
     }
 
     .center-circle {
@@ -54,7 +68,7 @@
     }
 
     .orbit {
-      width: 100%;
+      width: 105%;
       height: 100%;
       position: absolute;
       animation: rotate 4s linear infinite;
